@@ -1,0 +1,26 @@
+body {
+	margin: 20px auto auto auto;
+	padding: auto;
+	text-align: center;
+}
+
+#canvas, #options { width: 70%;
+					margin: auto; }
+
+#options { height: 30%; }
+
+#sliders             { width: 60%; }
+#sliders table       { margin: auto; }
+#sliders table tr td { padding: 5px; }
+
+#sliders, #buttons {
+	display: inline;
+	float: left;
+	text-align: center;
+	height: 100%;
+	margin: auto 5% auto 5%;
+}
+
+#buttons        { width: 10%; }
+#buttons button { display: block;
+				  margin: 30% auto auto auto; }
