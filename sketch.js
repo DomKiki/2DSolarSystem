@@ -31,8 +31,8 @@ function setup() {
 	initSliders();
 	initButtons();
 	
-	sun         = new Body(createVector(width / 2,       height / 2),       sldSunRad, sldSunDens, "#FFFF00", createVector(0,  0));
-	fittestBody = new Body(createVector(width / 2 - 300, height / 2 - 500), 10,        5,          "#FF1010", createVector(-6, 3));
+	sun         = new Body(createVector(width / 2,       height / 2),       sunRadius, sunDens, "#FFFF00", createVector(0,  0));
+	fittestBody = new Body(createVector(width / 2 - 100, height / 2 - 250), 10,        5,       "#FF1010", createVector(-6, 3));
 	spawn       = fittestBody.copy();
 	
 }
