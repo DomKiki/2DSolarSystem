@@ -136,7 +136,7 @@ class Body {
 	legacy() {
 		this.pos  = this.oPos.copy();
 		this.vel  = this.oVel.copy();
-		this.life = this.oLife;
+		this.life = 0;
 		this.col  = this.oCol;
 		this.acc  = createVector(0,0);
 		return this;
