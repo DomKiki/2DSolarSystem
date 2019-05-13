@@ -1,24 +1,27 @@
 class Body {
 	
-	constructor(x, y, r, d, c, v, l=0) {
+	constructor(p, r, d, c, v, l=0) {
 		
-		this.pos  = createVector(x,y);
-		this.rad  = r;
-		this.dens = d;
-		this.mass = this.updateMass();
+		this.pos   = p.copy();
+		this.oPos  = p.copy();
 		
-		this.vel = v;
-		this.acc = createVector(0,0); 
-		this.f   = [];
+		this.rad   = r;
+		this.dens  = d;
+		this.mass  = this.updateMass();
 		
-		this.maxA = 1;
-		this.col  = c;
-		this.life = 0;
+		this.vel   = v.copy();
+		this.oVel  = v.copy();
 		
-		this.oPos  = this.pos.copy();
-		this.oVel  = this.vel.copy();
-		this.oLife = l;
+		this.acc   = createVector(0,0); 
+		this.maxA  = 1;
+		
+		this.col   = c;
 		this.oCol  = color(red(this.col), green(this.col), blue(this.col));
+		
+		this.life  = l;
+		this.oLife = l;
+		
+		this.f   = [];
 		
 	}
 	
@@ -129,14 +132,30 @@ class Body {
 		}
 	}
 	
+	// Revert to legacy values
 	legacy() {
-		this.pos  = this.oPos;
-		this.vel  = this.oVel;
+		this.pos  = this.oPos.copy();
+		this.vel  = this.oVel.copy();
+		this.life = this.oLife;
 		this.col  = this.oCol;
 		this.acc  = createVector(0,0);
 		return this;
 	}
 	
-	copy() { return new Body(this.pos.x, this.pos.y, this.rad, this.dens, this.col, this.vel.copy(), this.life); }
+	// Update legacy values
+	updateLegacy() {
+		this.oPos  = this.pos.copy();
+		this.oVel  = this.vel.copy();
+		this.oLife = this.life;
+	}
+	
+	copy() { 
+		var b  = new Body(this.pos.copy(), this.rad, this.dens, this.col, this.vel.copy(), this.life); 
+		b.oPos = this.oPos.copy();
+		b.oVel = this.oVel.copy();
+		b.oCol = this.oCol;
+		b.acc  = createVector(0,0);
+		return b;
+	}
 
 }

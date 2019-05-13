@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>2D Solar System</title>
 		<link rel="stylesheet" type="text/css" href="./style.css">
-		<script type="text/javascript" src="../p5/p5.min.js"></script>
-		<script type="text/javascript" src="../p5/addons/p5.dom.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
 		<script src="sketch.js" type="text/javascript"></script>
 		<script src="body.js" type="text/javascript"></script>
 	</head>
@@ -15,12 +15,43 @@
 	<body>
 
 		<div id="canvas"></div>
-		<div id="options">
-			<div id="sliders">
-				<table></table>
-			</div>
-			<div id="buttons"></div>
-		</div>
+		<table id="options">
+			<tr>
+				<th colspan="4">Environment</td>
+				<th colspan="2">Sun</td>
+				<th colspan="2">Generation</td>
+			</tr>
+			<tr>
+				<td id="sldGTxt">G</td>
+				<td id="sldG"></td>
+				<td id="sldMaxBodiesTxt"></td>
+				<td id="sldMaxBodies"></td>
+				<td id="sldSunRadTxt"></td>
+				<td id="sldSunRad"></td>
+				<td id="btnNextGen"></td>
+			</tr>
+			<tr>
+				<td id="sldRangeVTxt"></td>
+				<td id="sldRangeV"></td>
+				<td id="sldAlterRateTxt"></td>
+				<td id="sldAlterRate"></td>
+				<td id="sldSunDensTxt"></td>
+				<td id="sldSunDens"></td>
+				<td id="btnAutoGen"></td>
+			</tr>
+			<tr>
+				<td id="sldRangeRTxt"></td>
+				<td id="sldRangeR"></td>
+				<td id="sldSpawnsPerGenTxt"></td>
+				<td id="sldSpawnsPerGen"></td>
+				<td id="sldActionRadTxt"></td>
+				<td id="sldActionRad"></td>
+			</tr>
+			<tr>
+				<td id="sldRangeDTxt"></td>
+				<td id="sldRangeD"></td>
+			</tr>
+		</table>
 		
 	</body>
 

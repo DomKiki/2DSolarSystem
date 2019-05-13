@@ -1,26 +1,14 @@
-body {
-	margin: 20px auto auto auto;
+body { margin: 20px auto auto auto;
 	padding: auto;
 	text-align: center;
 }
 
-#canvas, #options { width: 70%;
+#canvas, #options { width: 1200px;
 					margin: auto; }
 
-#options { height: 30%; }
+#options { height: 10%; 
+		   text-align: center; }
 
-#sliders             { width: 60%; }
-#sliders table       { margin: auto; }
-#sliders table tr td { padding: 5px; }
-
-#sliders, #buttons {
-	display: inline;
-	float: left;
-	text-align: center;
-	height: 100%;
-	margin: auto 5% auto 5%;
-}
-
-#buttons        { width: 10%; }
-#buttons button { display: block;
-				  margin: 30% auto auto auto; }
+#options tr td { padding: 5px; }
+#options tr th { padding-bottom: 10px; 
+				 font-size: 20px; }
